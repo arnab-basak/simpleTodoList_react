@@ -7,7 +7,17 @@ class ToDo extends Component {
     super(props);
     this.state = {
       toDoInput: '',
-      toDoList: []
+      toDoList: [{
+        done: false,
+        value: 'test1'
+      },{
+        done: false,
+        value: 'test2'
+      },
+      {
+        done: true,
+        value: 'test3'
+      }]
     };
   }
 
@@ -45,18 +55,19 @@ class ToDo extends Component {
     const tempState = {...this.state};  
     tempState.toDoList[index].done = !tempState.toDoList[index].done;
     this.setState(tempState);
-    console.log(this.state);
   }
 
   render () {
     return (
       <div>
-        <h3>To do list</h3>
-        <input type="text" id="input" 
-          onBlur={this.setToDoInput.bind(this)} 
-          placeholder="Jot down something..." >
-        </input>
-        <button onClick={ (event) => this.addAToDoElement(event, this)}>Add</button>
+        <div className="center">
+          <h3>To do list</h3>
+          <input type="text" id="input" 
+            onBlur={this.setToDoInput.bind(this)} 
+            placeholder="Jot down something..." >
+          </input>
+          <button onClick={ (event) => this.addAToDoElement(event, this)}>Add</button>
+        </div>
         <ToDoElement list={this.state.toDoList} 
           checkClick={this.toggleCheckBox.bind(this)}
           click={this.deleteToDoItem.bind(this)}></ToDoElement>

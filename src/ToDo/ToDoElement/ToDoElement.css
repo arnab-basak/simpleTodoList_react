@@ -1,0 +1,22 @@
+.elementDiv {
+  border: 1px solid #eee;
+  padding: 4px 0px;
+  margin: 1rem 4rem
+
+}
+.elementCheckBox {
+  width: 8%;
+  float: left;
+}
+
+.elementText {
+  word-wrap: break-word;
+  width: 82%;
+  float: left
+}
+
+.elementDelete{
+  background: transparent;
+  border: none;
+  width: 8%;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './ToDoElement.css'
 
 // function based component and stateless
 const ToDoElement = (props) => {
@@ -7,10 +8,10 @@ const ToDoElement = (props) => {
   };
   const listJSX = props.list.map((listItem, index) => {
     return ( 
-      <div key={index}>
-        <input type="checkbox" onClick={() => props.checkClick(index)}></input>
-        <span style={listItem.done ? doneCss : null}>{listItem.value}</span>
-        <button onClick={() => props.click(index)}>x</button>
+      <div className="elementDiv" key={index}>
+        <input className="elementCheckBox" type="checkbox" value={listItem.done} onClick={() => props.checkClick(index)}></input>
+        <span className="elementText" style={listItem.done ? doneCss : null}>{listItem.value}</span>
+        <button className="elementDelete" onClick={() => props.click(index)}>x</button>
       </div>
     )
   })
