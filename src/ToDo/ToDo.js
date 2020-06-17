@@ -39,15 +39,26 @@ class ToDo extends Component {
     tempState.toDoList.splice(index, 1);
     this.setState(tempState);
   }
+
+  //toggles the state for the element
+  toggleCheckBox(index) {
+    const tempState = {...this.state};  
+    tempState.toDoList.done = !tempState.toDoList.done;
+    this.setState(tempState);
+  }
+
   render () {
     return (
       <div>
         <h3>To do list</h3>
-        <input type="text" id="input" onBlur={this.setToDoInput.bind(this)} 
+        <input type="text" id="input" 
+          onBlur={this.setToDoInput.bind(this)} 
           placeholder="Jot down something..." >
         </input>
         <button onClick={ (event) => this.addAToDoElement(event, this)}>Add</button>
-        <ToDoElement list={this.state.toDoList} click={this.deleteToDoItem.bind(this)}></ToDoElement>
+        <ToDoElement list={this.state.toDoList} 
+          checkClick={this.toggleCheckBox.bind(this)}
+          click={this.deleteToDoItem.bind(this)}></ToDoElement>
       </div>
     );
   }
