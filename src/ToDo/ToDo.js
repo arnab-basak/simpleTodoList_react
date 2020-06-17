@@ -43,8 +43,9 @@ class ToDo extends Component {
   //toggles the state for the element
   toggleCheckBox(index) {
     const tempState = {...this.state};  
-    tempState.toDoList.done = !tempState.toDoList.done;
+    tempState.toDoList[index].done = !tempState.toDoList[index].done;
     this.setState(tempState);
+    console.log(this.state);
   }
 
   render () {

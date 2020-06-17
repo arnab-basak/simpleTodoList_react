@@ -10,7 +10,7 @@ const ToDoElement = (props) => {
       <div key={index}>
         <input type="checkbox" onClick={() => props.checkClick(index)}></input>
         <span style={listItem.done ? doneCss : null}>{listItem.value}</span>
-        <button onClick={()=>props.click(index)}>x</button>
+        <button onClick={() => props.click(index)}>x</button>
       </div>
     )
   })
