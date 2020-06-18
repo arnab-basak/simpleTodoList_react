@@ -1,0 +1,11 @@
+.newTodoText {
+  height: 20px;
+}
+
+.addItem {
+  background: #eee;
+  border-radius: 5%;
+  border: 1px solid #ddd;
+  margin-left: 10px;
+  padding: 5px 15px
+}

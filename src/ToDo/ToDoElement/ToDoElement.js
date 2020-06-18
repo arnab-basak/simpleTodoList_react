@@ -9,7 +9,10 @@ const ToDoElement = (props) => {
   const listJSX = props.list.map((listItem, index) => {
     return ( 
       <div className="elementDiv" key={index}>
-        <input className="elementCheckBox" type="checkbox" value={listItem.done} onClick={() => props.checkClick(index)}></input>
+        <input className="elementCheckBox" 
+           type="checkbox" 
+           checked={listItem.done}
+           onClick={() => props.checkClick(index)}></input>
         <span className="elementText" style={listItem.done ? doneCss : null}>{listItem.value}</span>
         <button className="elementDelete" onClick={() => props.click(index)}>x</button>
       </div>
